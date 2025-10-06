@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap');
+@import url('./features/setList/SetList.scss');
+@import url('./features/cardList/CardList.scss');
+@import url('./features/card/Card.scss');
+
+body {
+  font-size: 12px;
+  font-family: Cabin;
+  overflow: hidden;
+  height: 100vh;
+  width: "~calc(100% - 5px)";
+  background-color: #835b42;
+  color: #efe6d8;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #91684e; 
+}
+::-webkit-scrollbar-thumb {
+  background: #6b462f; 
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #997158; 
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+}

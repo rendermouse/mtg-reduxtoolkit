@@ -1,0 +1,16 @@
+.CardList {
+    flex: 1 1 60%;
+    overflow: hidden;
+    height: calc(100vh - 50px);
+    padding-bottom: 100px;
+
+    .CardContainer {
+        overflow-y: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        height: 90vh;
+    }
+}

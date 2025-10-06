@@ -1,0 +1,29 @@
+.SetList {
+    width: 220px;
+    text-align: right;
+    height: 100vh;
+    padding: 0 16px;
+
+    .setListContainer {
+        overflow-y: auto;
+        width: 200px;
+        text-align: right;
+        height: 90vh;
+        padding: 0 16px;
+        flex: 1 1;
+
+        .set {
+            display: block;
+            cursor: pointer;
+    
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &.active {
+                font-weight: bold;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,79 @@
+.cardWrap {
+    width: 250px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    transition: top 0.1s ease-in-out;
+    border-radius: 16px;
+    background-color: #00000022;
+
+    &:hover {
+        position: relative;
+        top: -5px;
+    }
+
+    .cardTop, .cardBot {
+        width: 100%;
+        height: 45px;
+        background-size: cover;
+        transform: translate3d(0, 0, .1px);
+    }
+
+    .cardBot {
+        height: 8px;
+        background-position-y: bottom;
+        transition: height 0s ease-in-out, z-index 0.3s;
+
+        .cardType {
+            border: #ff0 1px solid;
+            height: 20px;
+            width: 71px;
+            position: relative;
+            top: 155px;
+            left: 18px;
+            z-index: 1;
+            display: none;                
+        }
+    }
+
+    &.active {
+        cursor:pointer;
+        
+        .cardBot {
+            height: 308px;
+            position: relative;
+            z-index: 10;
+            transition: height 0.3s ease-in-out, z-index 0.3s;
+            top: -5px;
+
+            .cardType {
+                display: block;
+
+                &.Enchantment {
+                    width: 100px;
+                }
+
+                &.Creature {
+                    width: 50px;
+                }
+
+                &.Artifact {
+                    width: 50px;
+                }
+
+                &.Sorcery {
+                    width: 50px;
+                }
+
+                &.Equipment {
+                    width: 50px;
+                }
+
+                &.Instant {
+                    width: 50px;
+                }
+            }
+        }
+    }
+}
