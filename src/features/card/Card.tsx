@@ -21,7 +21,7 @@ const Card: React.FC<CardProps> = ({ cardData }) => {
     const urlCss = cardData.imageUrl ? 'url(' + cardData.imageUrl + ')' : '';
 
     return(
-        <div className={selected ? 'cardWrap active' : 'cardWrap'} ref={ref} onClick={(e) => toggleCard(cardData, e)}>
+        <div className={selected ? 'cardWrap active' : 'cardWrap'} ref={ref} onClick={() => toggleCard(cardData)}>
             <div className="cardTop" style={isVisible ? {backgroundImage: urlCss} : undefined}></div>
             <div className="cardBot" style={isVisible ? {backgroundImage: urlCss} : undefined}></div>
         </div>

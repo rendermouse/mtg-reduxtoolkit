@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { useAppDispatch} from "../../app/hooks";
 import { useGetSetListQuery } from "./setListAPISlice";
 import { setCurrentSetCode } from "../cardList/cardListAPISlice"
 import { type JSX } from "react"

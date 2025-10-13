@@ -4,10 +4,15 @@ import { setupListeners } from "@reduxjs/toolkit/query"
 import { setListApiSlice } from "../features/setList/setListAPISlice"
 import { cardListApiSlice, /* selectedSetSlice? */ } from "../features/cardList/cardListAPISlice"
 import selectedSetReducer from "../features/cardList/cardListAPISlice"
+import manaFilterReducer from "../features/cardTools/CardToolsSlice"
 
 // `combineSlices` automatically combines the reducers using
 // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
-const rootReducer = combineSlices(setListApiSlice, cardListApiSlice, { selectedSet: selectedSetReducer })
+const rootReducer = combineSlices(
+  setListApiSlice,
+  cardListApiSlice,
+  { selectedSet: selectedSetReducer, manaFilter: manaFilterReducer }
+)
 
 // Infer the `RootState` type from the root reducer
 export type RootState = ReturnType<typeof rootReducer>

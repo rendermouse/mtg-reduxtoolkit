@@ -64,18 +64,19 @@ type CardListApiResponse = {
   skip: number
 }
 
-// RTK Query API slice to fetch cards by set code
+// Redux Toolkit Query API slice to fetch cards by set code
 export const cardListApiSlice = createApi({
   reducerPath: "cardListApi",
   baseQuery: fetchBaseQuery({ baseUrl: "https://api.magicthegathering.io/v1/cards" }),
   endpoints: (build) => ({
-    getCardList: build.query<CardListApiResponse, string>({
-      query: (setCode: string) => `?set=${setCode}`,
+    // accepts an object so callers can request pages: { setCode, page, pageSize }
+    getCardList: build.query<CardListApiResponse, { setCode: string; page?: number; pageSize?: number }>({
+      query: ({ setCode, page = 1, pageSize = 100 }) => `?set=${setCode}&page=${page}&pageSize=${pageSize}`,
     }),
   }),
 })
 
-// A small slice to store the currently selected set code
+// A slice to store the currently selected set code
 export type SelectedSetState = {
   currentSetCode: string
 }
